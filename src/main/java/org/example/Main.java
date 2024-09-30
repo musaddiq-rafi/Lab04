@@ -11,10 +11,10 @@ public class Main {
 
         TxtReader txtReader = new TxtReader();
         JSONReader jsonReader = new JSONReader();
-        XMLReader xmlReader = new XMLReader();
+       // XMLReader xmlReader = new XMLReader();
 
-        ArrayList<Transactions> transactionsFromText = txtReader.readFromTextFile(textfilePath);
-        ArrayList<Transactions> transactionsFromJson = jsonReader.readFromJsonFile(jsonfilePath);
+        ArrayList<Transactions> transactionsFromText = txtReader.readFromFile(textfilePath);
+        ArrayList<Transactions> transactionsFromJson = jsonReader.readFromFile(jsonfilePath);
         //ArrayList<Transactions> transactionsFromXml = xmlReader.readFromXmlFile(xmlfilePath);
 
         // You can now use the transactionsFromText, transactionsFromJson, and transactionsFromXml lists

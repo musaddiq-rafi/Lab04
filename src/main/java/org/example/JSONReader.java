@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class JSONReader {
-    public ArrayList<Transactions> readFromJsonFile(String jsonfilePath) {
+    public ArrayList<Transactions> readFromFile(String jsonfilePath) {
         ArrayList<Transactions> transactions = new ArrayList<>();
 
         try (BufferedReader br = new BufferedReader(new FileReader(jsonfilePath))) {

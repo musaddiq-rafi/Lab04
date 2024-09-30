@@ -1,3 +1,4 @@
+// TxtReader.java
 package org.example;
 
 import java.io.BufferedReader;
@@ -5,9 +6,9 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class TxtReader {
-    //complete the class
-    public ArrayList<Transactions> readFromTextFile(String filePath) {
+public class TxtReader implements Reader {
+    @Override
+    public ArrayList<Transactions> readFromFile(String filePath) {
         ArrayList<Transactions> transactions = new ArrayList<>();
         String line;
         String regex = ",";
