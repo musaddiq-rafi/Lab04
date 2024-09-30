@@ -3,6 +3,9 @@ package org.example;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.DocumentBuilder;
+
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -16,20 +19,23 @@ public class Main {
         String textfilePath = "src/main/java/org/example/BankDetails.txt";
         String jsonfilePath = "src/main/java/org/example/BankDetails.json";
 
-        // Reading from a text file
+
         ArrayList<Transactions> transactionsFromText = readfromTextFile(textfilePath);
-        displayTransactionSummary(transactionsFromText, "Text File");
 
-        //Reading from a json file
+
+
         ArrayList<Transactions> transactionsFromJson = readfromJsonFile(jsonfilePath);
-        displayTransactionSummary(transactionsFromJson, "Json File");
+
+
+        ArrayList<Transactions> transactionsFromXml = readfromXmlFile(xmlfilePath);
+
+
 
     }
 
 
 
-    private static void displayTransactionSummary(ArrayList<Transactions> transactionsFromText, String textFile) {
-    }
+
 
     public static ArrayList<Transactions> readfromTextFile(String filePath){
             ArrayList<Transactions> transactions= new ArrayList();
@@ -71,6 +77,7 @@ public class Main {
             }
 
             JSONArray jsonArray = new JSONArray(jsonString.toString());
+            System.out.println("READING FROM JSON FILE");
 
             for (int i = 0; i < jsonArray.length(); i++) {
                 JSONObject jsonObject = jsonArray.getJSONObject(i);
@@ -81,6 +88,11 @@ public class Main {
 
                 Transactions transaction = new Transactions(date, amount, purpose);
                 transactions.add(transaction);
+
+
+                System.out.println(date);
+                System.out.println(amount);
+                System.out.println(purpose);
             }
 
         } catch (IOException e) {
@@ -89,7 +101,11 @@ public class Main {
 
         return transactions;
     }
+    private static ArrayList<Transactions> readfromXmlFile(String xmlfilePath){
+        ArrayList<Transactions> transactions = new ArrayList<>();
+        try{
 
-
+        }
+    }
 }
 
