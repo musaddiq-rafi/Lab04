@@ -9,7 +9,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class JSONReader {
+public class JSONReader implements Reader {
+    @Override
     public ArrayList<Transactions> readFromFile(String jsonfilePath) {
         ArrayList<Transactions> transactions = new ArrayList<>();
 

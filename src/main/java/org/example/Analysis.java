@@ -1,12 +1,12 @@
+// Analysis.java
 package org.example;
 
 import java.util.ArrayList;
 
-
 public class Analysis {
 
     public Analysis(ArrayList<Transactions> transactions) {
-
+        // Constructor can be used to initialize or process transactions if needed
     }
 
     static int profitOrLoss(ArrayList<Transactions> transactions) {
@@ -17,11 +17,7 @@ public class Analysis {
         return summation;
     }
 
-//    ArrayListList topTenTransaction(){
-//     return ;
-//    }
-
-    static String mostExpense(ArrayList<Transactions> transactions){
+    static String mostExpense(ArrayList<Transactions> transactions) {
         int maxExpense = Integer.MIN_VALUE;
         int index = -1;
         for (int i = 0; i < transactions.size(); i++) {
@@ -32,5 +28,4 @@ public class Analysis {
         }
         return transactions.get(index).purpose;
     }
-
 }
